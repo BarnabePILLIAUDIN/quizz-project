@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$color1: rgb(207, 207, 207);
+$color2: rgb(15, 27, 72);
+$bg1: rgba(207, 207, 207, 0.7);
+$font1: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+body {
+  background: url("/imgs/bg.jpg") center/cover fixed;
+  color: $color1;
+}

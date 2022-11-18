@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/_head") %>
+  </head>
+  <body>
+    <%- include("partials/_header") %> 
+    <% data.forEach(element => { %>
+      <div class="question-div">
+        <% let answer = 0 %> 
+        <h2><%= element.question %></h1>
+        <div class="answers">
+          <!-- I have to remove one from good answer because on the db it's 1,2,3 or 4  -->
+          <% if(answer==element.goodAnswer-1){ %> 
+          <h3 class="good a1"><%= element.answer1%></h3>
+          <%}else {%>
+          <h3 class="wrong a1"><%= element.answer1%></h3>
+          <% } answer++ %> 
+          <% if(answer==element.goodAnswer-1){ %> 
+          <h3 class="good a2"><%= element.answer2%></h3>
+          <%}else {%>
+          <h3 class="wrong a2"><%= element.answer2%></h3>
+          <% } answer++ %> 
+          <% if(answer==element.goodAnswer-1){ %> 
+          <h3 class="good a3"><%= element.answer3%></h3>
+          <%}else {%>
+          <h3 class="wrong" a3><%= element.answer3%></h3>
+          <% } answer++ %> 
+          <% if(answer==element.goodAnswer-1){ %> 
+          <h3 class="good a4"><%= element.answer4%></h3>
+          <%}else {%>
+          <h3 class="wrong a4"><%= element.answer4%></h3>
+          <% } %> 
+        </div>
+      </div>
+    <%}); %>
+  </body>
+</html>

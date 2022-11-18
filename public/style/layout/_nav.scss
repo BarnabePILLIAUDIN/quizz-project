@@ -1,0 +1,35 @@
+header {
+  color: rgb(207, 207, 207);
+  padding: 2%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  font-family: $font1;
+  width: 100vw;
+  height: 50%;
+  font-size: 3rem;
+  border-bottom: $color1 solid 2px;
+  h2 {
+    letter-spacing: 15px;
+    margin-left: 5%;
+  }
+  nav {
+    width: 75%;
+    ul {
+      list-style: none;
+      li {
+        font-size: 2rem;
+        margin-left: 10%;
+        margin-top: 2.25%;
+        transition: 0.5s;
+        a {
+          text-decoration: none;
+          color: $color1;
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.question-div {
+  margin: 3% 10%;
+  background: $bg1;
+  color: $color2;
+  padding: 3%;
+  border-radius: 50px;
+  font-family: $font1;
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3%;
+  }
+  .answers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    h3 {
+      margin: 0% 5%;
+    }
+  }
+}
