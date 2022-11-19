@@ -64,6 +64,7 @@ header nav ul li a:hover {
   align-items: center;
   flex-direction: column;
   font-size: 1.5rem;
+  margin: 0% 10%;
 }
 .question-div .answers .answer {
   flex-direction: row;
@@ -77,6 +78,9 @@ header nav ul li a:hover {
 }
 .question-div .answers .answer input[type=checkbox]:checked ~ label {
   color: yellow;
+}
+.question-div .answers .answer input[type=checkbox] {
+  display: none;
 }
 
 button {

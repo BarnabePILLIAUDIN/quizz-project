@@ -4,7 +4,8 @@
     <%- include("partials/_head") %>
   </head>
   <body>
-    <%- include("partials/_header") %> <% data.forEach(element => { %>
+    <%- include("partials/_header") %> <% let question = 1 %> <%
+    data.forEach(element => { %>
     <div class="question-div">
       <% let answer = 0 %>
       <h2><%= element.question %></h2>
@@ -12,41 +13,98 @@
         <!-- I have to remove one from good answer because on the db it's 1,2,3 or 4  -->
         <div class="answer">
           <% if(answer==element.goodAnswer-1){ %>
-          <input type="checkbox" name="a1" id="a1" class="check-good" />
-          <label class="good a1"><%= element.answer1%></label>
+          <input
+            type="checkbox"
+            name="a1"
+            id="a1-<%=question %>"
+            class="check-good"
+          />
+          <label class="good a1" for="a1-<%=question%>"
+            ><%= element.answer1%></label
+          >
           <%}else {%>
-          <input type="checkbox" name="a1" id="a1" class="check-wrong" />
-          <label class="wrong a1"><%= element.answer1%></label>
+          <input
+            type="checkbox"
+            name="a1"
+            id="a1-<%=question%>"
+            class="check-wrong"
+          />
+          <label class="wrong a1" for="a1-<%=question%>"
+            ><%= element.answer1%></label
+          >
           <% } answer++ %>
         </div>
         <div class="answer">
           <% if(answer==element.goodAnswer-1){ %>
-          <input type="checkbox" name="a2" id="a2" class="check-good" />
-          <label class="good a2"><%= element.answer2%></label>
+          <input
+            type="checkbox"
+            name="a2"
+            id="a2-<%=question%>"
+            class="check-good"
+          />
+          <label class="good a2" for="a2-<%=question%>"
+            ><%= element.answer2%></label
+          >
           <%}else {%>
-          <input type="checkbox" name="a2" id="a2" class="check-wrong" />
-          <label class="wrong a2"><%= element.answer2%></label>
+          <input
+            type="checkbox"
+            name="a2"
+            id="a2-<%=question%>"
+            class="check-wrong"
+          />
+          <label class="wrong a2" for="a2-<%=question%>"
+            ><%= element.answer2%></label
+          >
           <% } answer++ %>
         </div>
         <div class="answer">
           <% if(answer==element.goodAnswer-1){ %>
-          <input type="checkbox" name="a3" id="a3" class="check-good" />
-          <label class="good a3"><%= element.answer3%></label>
+          <input
+            type="checkbox"
+            name="a3"
+            id="a3-<%=question%>"
+            class="check-good"
+          />
+          <label class="good a3" for="a3-<%=question%>"
+            ><%= element.answer3%></label
+          >
           <%}else {%>
-          <input type="checkbox" name="a3" id="a3" class="check-wrong" />
-          <label class="wrong a3"><%= element.answer3%></label>
+          <input
+            type="checkbox"
+            name="a3"
+            id="a3-<%=question%>"
+            class="check-wrong"
+          />
+          <label class="wrong a3" for="a3-<%=question%>"
+            ><%= element.answer3%></label
+          >
           <% } answer++ %>
         </div>
         <div class="answer">
           <% if(answer==element.goodAnswer-1){ %>
-          <input type="checkbox" name="a4" id="a4" class="check-good" />
-          <label class="good a4"><%= element.answer4%></label>
+          <input
+            type="checkbox"
+            name="a4"
+            id="a4-<%=question%>"
+            class="check-good"
+          />
+          <label class="good a4" for="a4-<%=question%>"
+            ><%= element.answer4%></label
+          >
           <%}else {%>
-          <input type="checkbox" name="a4" id="a4" class="check-wrong" />
-          <label class="wrong a4"><%= element.answer4%></label>
+          <input
+            type="checkbox"
+            name="a4"
+            id="a4-<%=question%>"
+            class="check-wrong"
+          />
+          <label class="wrong a4" for="a4-<%=question%>"
+            ><%= element.answer4%></label
+          >
           <% } %>
         </div>
       </div>
+      <% question++%>
     </div>
     <%}); %>
     <button class="checkButton">Show answers</button>
