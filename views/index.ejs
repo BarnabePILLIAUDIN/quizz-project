@@ -4,35 +4,52 @@
     <%- include("partials/_head") %>
   </head>
   <body>
-    <%- include("partials/_header") %> 
-    <% data.forEach(element => { %>
-      <div class="question-div">
-        <% let answer = 0 %> 
-        <h2><%= element.question %></h1>
-        <div class="answers">
-          <!-- I have to remove one from good answer because on the db it's 1,2,3 or 4  -->
-          <% if(answer==element.goodAnswer-1){ %> 
-          <h3 class="good a1"><%= element.answer1%></h3>
+    <%- include("partials/_header") %> <% data.forEach(element => { %>
+    <div class="question-div">
+      <% let answer = 0 %>
+      <h2><%= element.question %></h2>
+      <div class="answers">
+        <!-- I have to remove one from good answer because on the db it's 1,2,3 or 4  -->
+        <div class="answer">
+          <% if(answer==element.goodAnswer-1){ %>
+          <input type="checkbox" name="a1" id="a1" class="check-good" />
+          <label class="good a1"><%= element.answer1%></label>
           <%}else {%>
-          <h3 class="wrong a1"><%= element.answer1%></h3>
-          <% } answer++ %> 
-          <% if(answer==element.goodAnswer-1){ %> 
-          <h3 class="good a2"><%= element.answer2%></h3>
+          <input type="checkbox" name="a1" id="a1" class="check-wrong" />
+          <label class="wrong a1"><%= element.answer1%></label>
+          <% } answer++ %>
+        </div>
+        <div class="answer">
+          <% if(answer==element.goodAnswer-1){ %>
+          <input type="checkbox" name="a2" id="a2" class="check-good" />
+          <label class="good a2"><%= element.answer2%></label>
           <%}else {%>
-          <h3 class="wrong a2"><%= element.answer2%></h3>
-          <% } answer++ %> 
-          <% if(answer==element.goodAnswer-1){ %> 
-          <h3 class="good a3"><%= element.answer3%></h3>
+          <input type="checkbox" name="a2" id="a2" class="check-wrong" />
+          <label class="wrong a2"><%= element.answer2%></label>
+          <% } answer++ %>
+        </div>
+        <div class="answer">
+          <% if(answer==element.goodAnswer-1){ %>
+          <input type="checkbox" name="a3" id="a3" class="check-good" />
+          <label class="good a3"><%= element.answer3%></label>
           <%}else {%>
-          <h3 class="wrong" a3><%= element.answer3%></h3>
-          <% } answer++ %> 
-          <% if(answer==element.goodAnswer-1){ %> 
-          <h3 class="good a4"><%= element.answer4%></h3>
+          <input type="checkbox" name="a3" id="a3" class="check-wrong" />
+          <label class="wrong a3"><%= element.answer3%></label>
+          <% } answer++ %>
+        </div>
+        <div class="answer">
+          <% if(answer==element.goodAnswer-1){ %>
+          <input type="checkbox" name="a4" id="a4" class="check-good" />
+          <label class="good a4"><%= element.answer4%></label>
           <%}else {%>
-          <h3 class="wrong a4"><%= element.answer4%></h3>
-          <% } %> 
+          <input type="checkbox" name="a4" id="a4" class="check-wrong" />
+          <label class="wrong a4"><%= element.answer4%></label>
+          <% } %>
         </div>
       </div>
+    </div>
     <%}); %>
+    <button class="checkButton">Show answers</button>
+    <script src="scripts\javascript\checkAnswers.js"></script>
   </body>
 </html>

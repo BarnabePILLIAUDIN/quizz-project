@@ -14,9 +14,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-size: 1.5rem;
-    h3 {
-      margin: 0% 5%;
+    .answer {
+      flex-direction: row;
+      margin: 2% 30%;
+      width: 50%;
+      label {
+        color: $color2;
+        font-size: 3rem;
+        margin: 0% 5%;
+      }
+      input[type="checkbox"]:checked ~ label {
+        color: yellow;
+      }
     }
   }
+}
+button {
+  margin: 2% 40%;
+  width: 20%;
+  padding: 1.5% 0%;
+  font-family: $font1;
+  font-size: 2rem;
+  background: none;
+  border: 2px solid $color1;
+  color: $color1;
+  transition: 0.5s;
+}
+button:hover {
+  transform: scale(1.2);
+  background: $bg1;
+  color: $color2;
 }

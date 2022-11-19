@@ -71,7 +71,7 @@ header nav ul li a:hover {
   transition: 0.5s;
 }
 .form-container .input:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   background: rgb(15, 27, 72);
   color: rgb(207, 207, 207);
 }
